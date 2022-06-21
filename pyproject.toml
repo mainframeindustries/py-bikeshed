@@ -6,9 +6,6 @@ authors = ["Kristján Valur Jónsson <fkristjan@themainframe.com>"]
 repository = "https://github.com/kristjanvalur/py-shed"
 documentation = "https://kristjanvalur.github.io/py-shed/"
 readme = "README.md"
-packages = [
-  {include = "shed"}
-]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
