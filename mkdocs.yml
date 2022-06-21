@@ -1,0 +1,30 @@
+site_name: py-shed
+repo_url: https://github.com/kristjanvalur/py-shed
+site_url: https://kristjanvalur.github.io/py-shed
+site_description: A collection of packages used at the Mainframe
+site_author: Kristján Valur Jónsson
+
+nav:
+  - Home: index.md
+  - Modules: modules.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+            setup_commands:
+                - import sys
+                - sys.path.append('../')
+copyright: Maintained by Kristján Valur Jónsson.
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    primary: white
+    accent: blue
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
