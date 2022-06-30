@@ -40,9 +40,8 @@ class FakeException(type):
         Dynamically create a new exception type to be used.
         """
         fake = cls(name, (Exception,), {})
-        fake.repr = reprstr
         fake.__module__ = module
-        fake.__qualname__ = module + "." + name
+        fake.repr = reprstr
         return fake
 
 

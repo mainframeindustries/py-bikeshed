@@ -111,3 +111,5 @@ def test_unsanitized():
 
     with pytest.raises(RuntimeError):
         rpcwrap.unwrap_response(wrapped)
+
+

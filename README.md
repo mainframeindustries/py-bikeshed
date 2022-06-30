@@ -15,6 +15,8 @@ A collection of packages used at the Mainframe
 
 ## Releasing a new version
 
+To release a new version, you need to get with the programme!
+
 
 
 ---
