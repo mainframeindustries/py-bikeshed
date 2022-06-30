@@ -1,6 +1,7 @@
-import pytest
 import traceback
 from unittest.mock import Mock
+
+import pytest
 
 from shed.rpctools import rpcwrap
 

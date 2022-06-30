@@ -1,5 +1,6 @@
-from shed.rpctools import exc_tools
 import traceback
+
+from shed.rpctools import exc_tools
 
 
 def test_dynamic_exception():

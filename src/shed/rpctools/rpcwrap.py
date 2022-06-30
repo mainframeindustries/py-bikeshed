@@ -12,8 +12,8 @@ import traceback
 
 from .exc_tools import (
     RemoteException,
-    traceback_exception_serialize,
     traceback_exception_deserialize,
+    traceback_exception_serialize,
 )
 
 # Helpers to serialize the TracebackException and related classes in the traceback module
