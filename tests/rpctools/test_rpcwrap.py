@@ -113,3 +113,22 @@ def test_unsanitized():
         rpcwrap.unwrap_response(wrapped)
 
 
+def test_rewrap_raise_from_wrapped():
+    """
+    Test that when wrapping an exception that was raised by unwrapping an original exception,
+    we can just get the original wrap
+    """
+
+    # create a wrapped exception
+    errorhandler = Mock()
+    wrapped = rpcwrap.wrap_rpc_handler(errorhandler, problemhandler)
+    errorhandler.assert_called()
+    assert rpcwrap.is_wrapped_response(wrapped)
+
+    # raise from wrapped
+    with pytest.raises(rpcwrap.RemoteException) as excinfo:
+        rpcwrap.unwrap_response(wrapped)
+
+    # we now have an error that we wish to wrap
+    wrapped2 = rpcwrap.wrap_exception(excinfo.value)
+    assert wrapped2 == wrapped

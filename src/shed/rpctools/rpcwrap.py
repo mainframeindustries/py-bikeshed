@@ -19,10 +19,16 @@ from .exc_tools import (
 # Helpers to serialize the TracebackException and related classes in the traceback module
 
 
-def wrap_exception(exception: Exception) -> dict:
+def wrap_exception(exception: BaseException, reuse_wrap=True) -> dict:
     """
     Wrap an exception in a standard identifiable way using only jsonable data.
+    If reuse_wrap is True, any previous wrapped error response in the exception
+    is returned instead.  This is useful if an exception from remote is being passed
+    on to a different remote.
     """
+    if reuse_wrap and isinstance(exception, RemoteException):
+        if getattr(exception, "wrapped_response", None):
+            return exception.wrapped_response
 
     # return a magic dict with a key and version, and an exception member
     result = {
@@ -84,7 +90,7 @@ def unwrap_response(value):
             if value["success"]:
                 return value["result"]
             else:
-                raise_from_errors(value["errors"])
+                raise_from_errors(value["errors"], wrapped_response=value)
 
     # otherwise, this was just a plain, unwrapped, value
     return value
@@ -101,7 +107,11 @@ def wrapped_response_success(value):
     return value["success"]
 
 
-def raise_from_errors(errors):
+def raise_from_errors(errors, wrapped_response=None):
+    """Raise an error from the wrapped errors.
+    wrapped_response can be provided as the original wrapped response, to be re-used
+    in case the resulting error is ever re-wrapped.
+    """
     # support single error only for now.  There is at least one error
     err = errors[0]
     if "exception" in err:
@@ -111,6 +121,8 @@ def raise_from_errors(errors):
         exception = RemoteException.FromTracebackException(tbe)
     else:
         exception = RemoteException.FromStrings(err["error_strings"])
+    # store the original wrapped response in the exception object
+    exception.wrapped_response = wrapped_response
     raise exception
 
 
