@@ -1,6 +1,6 @@
 import traceback
 
-from shed.rpctools import exc_tools
+from bikeshed.rpctools import exc_tools
 
 
 def test_dynamic_exception():

@@ -3,7 +3,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from shed.rpctools import rpcwrap
+from bikeshed.rpctools import rpcwrap
 
 
 def problemhandler(*args):

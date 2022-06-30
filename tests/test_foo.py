@@ -1,4 +1,4 @@
-from shed.foo import foo
+from bikeshed.foo import foo
 
 
 def test_foo():
