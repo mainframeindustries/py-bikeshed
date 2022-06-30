@@ -27,6 +27,7 @@ def test_wrap():
     assert rpcwrap.is_wrapped_response(wrapped)
     assert not rpcwrap.wrapped_response_success(wrapped)
     exception = wrapped["errors"]
+    assert exception
 
 
 def test_wrap_success():
@@ -45,6 +46,7 @@ def test_wrap_handler():
     assert rpcwrap.is_wrapped_response(wrapped)
     assert not rpcwrap.wrapped_response_success(wrapped)
     errors = wrapped["errors"]
+    assert errors
 
 
 def test_wrap_handler_decorator():
@@ -60,6 +62,7 @@ def test_wrap_handler_decorator():
     assert rpcwrap.is_wrapped_response(wrapped)
     assert not rpcwrap.wrapped_response_success(wrapped)
     exception = wrapped["errors"]
+    assert exception
 
 
 def test_both_decorators():
