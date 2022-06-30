@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "shed"
+name = "bikeshed"
 version = "0.0.1"
 description = "A collection of packages used at the Mainframe"
 authors = ["Kristján Valur Jónsson <fkristjan@mainframeindustries.com>"]
