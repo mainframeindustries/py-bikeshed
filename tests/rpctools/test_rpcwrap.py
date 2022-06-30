@@ -2,7 +2,6 @@ import traceback
 from unittest.mock import Mock
 
 import pytest
-
 from bikeshed.rpctools import rpcwrap
 
 
