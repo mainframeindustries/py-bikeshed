@@ -2,9 +2,9 @@
 name = "shed"
 version = "0.0.1"
 description = "A collection of packages used at the Mainframe"
-authors = ["Kristján Valur Jónsson <fkristjan@themainframe.com>"]
-repository = "https://github.com/kristjanvalur/py-shed"
-documentation = "https://kristjanvalur.github.io/py-shed/"
+authors = ["Kristján Valur Jónsson <fkristjan@mainframeindustries.com>"]
+repository = "https://github.com/mainframeindustries/py-bikeshed"
+documentation = "https://mainframeindustries.github.io/py-bikeshed/"
 readme = "README.md"
 
 [tool.poetry.dependencies]
