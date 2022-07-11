@@ -1,4 +1,4 @@
-from bikeshed.foo import foo
+from gomma.foo import foo
 
 
 def test_foo():

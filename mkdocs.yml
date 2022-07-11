@@ -1,6 +1,6 @@
-site_name: py-bikeshed
-repo_url: https://github.com/mainframeindustries/py-bikeshed
-site_url: https://mainframeindustries.github.io/py-bikeshed
+site_name: py-gomma
+repo_url: https://github.com/mainframeindustries/py-gomma
+site_url: https://mainframeindustries.github.io/py-gomma
 site_description: A collection of packages used at the Mainframe
 site_author: Kristján Valur Jónsson
 

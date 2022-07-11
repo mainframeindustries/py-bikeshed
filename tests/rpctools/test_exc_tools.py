@@ -1,6 +1,6 @@
 import traceback
 
-from bikeshed.rpctools import exc_tools
+from gomma.rpctools import exc_tools
 
 
 def test_dynamic_exception():

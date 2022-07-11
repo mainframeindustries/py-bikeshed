@@ -3,7 +3,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from bikeshed.rpctools import rpcwrap
+from gomma.rpctools import rpcwrap
 
 
 def problemhandler(*args):
